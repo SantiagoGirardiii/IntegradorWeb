@@ -1,0 +1,106 @@
+body {
+    background-color: rgb(250, 250, 250,1);
+    color: rgba(51, 51, 51, 1);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.divPrincipal {
+    background-color: rgba(255,199,44,1);
+    padding: 1rem 2rem ;  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logoImagen {
+    height: 80px;
+    width: auto;
+}
+
+.divPrincipal h1{
+    color: rgba(51, 51, 51, 1);
+}
+
+.navegacion ul {
+    list-style: none;
+    display: flex;
+}
+
+.navegacion li {
+    margin-left: 1.5rem;
+}
+
+.navegacion a {
+    text-decoration: none;
+    color: rgba(51, 51, 51, 1);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.menu {
+    padding: 2rem;
+    text-align: center;    
+}
+
+.menuColumna {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.platoItem {
+    flex-basis: 30%;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.platoItem img {
+    max-width: 100%;
+    height: auto;
+
+}
+
+.botonComida {
+    background-color: rgba(228,0,43,1);
+    color: rgba(250, 250, 250, 1);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.parteDeAbajo {
+    background-color: rgba(51, 51, 51, 1);
+    color: rgba(250, 250, 250, 1);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+
+    
+}
+
+.infoAdicional {
+    display: none;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.infoAdicional.mostrar {
+    display: block;
+}
+
+
+
