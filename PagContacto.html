@@ -23,7 +23,7 @@
         </div>
 
         <div class="contenidoContacto">
-            <h2>!Envianos tu consulta!</h2>
+            <h2>Envianos tu consulta!</h2>
             <p>Completa el formulario y te responderemos a la brevedad</p>
 
             <div class="formularioContenedor">
@@ -50,13 +50,13 @@
                     <div class="formGrupo">
                         <label for="telefono">Telefono:</label>
                         <input type="tel" id="telefono" name="telefono" >
-                        <div class="mensajeError" ></div>
+                        <div class="mensajeError" id="errorTelefono"></div>
                     </div>
 
                     <div class="formGrupo">
                         <label for="mensaje">Mensaje (Opcional)</label>
                         <textarea name="mensaje" id="mensaje" rows="5" maxlength="300"></textarea>
-                        <div class="mensajeEror" id="errorMensaje"></div>
+                        <div class="mensajeErorr" id="errorMensaje"></div>
 
                     </div>
 
@@ -76,6 +76,122 @@
         </div>
         
 
+        <script>
+
+            const formulario = document.getElementById('formularioContacto');
+
+            if(formulario) {
+
+                formulario.addEventListener('submit' , function(evento) {
+
+                    evento.preventDefault();
+
+                    const esValido = validarFormulario();
+
+                    if(esValido){
+                        mostrarDatosEnviados();
+                        formulario.reset();
+                    }
+                });
+
+            };
+
+
+            function validarFormulario() {
+                let esFormularioValido = true;
+
+
+
+                const nombre = document.getElementById("nombre");
+                const email = document.getElementById("email");
+                const telefono = document.getElementById("telefono");
+                const mensaje = document.getElementById("mensaje");
+
+                const errorNombre = document.getElementById('errorNombre');
+                const errorEmail = document.getElementById('errorEmail');
+                const errorTelefono = document.getElementById('errorTelefono');
+                const errorMensaje = document.getElementById('errorMensaje');
+
+                errorNombre.textContent = '';
+                errorEmail.textContent = '';
+                errorTelefono.textContent = '';
+                errorMensaje.textContent = '';
+                
+
+                const regexEmail = /^[a-zA-Z0-9. %+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                const regexNumero = /^[\d]{7,15}$/
+
+                if (nombre.value.trim() === '') {
+                    errorNombre.textContent = 'El nombre es obligatorio.';
+                    esFormularioValido = false;
+                } else if (nombre.value.length > 50) {
+                    errorNombre.textContent = 'El nombre no puede superar los 50 caracteres.';
+                    esFormularioValido = false;
+                     }
+
+               if (email.value.trim() === '') {
+                    errorEmail.textContent = 'El email es obligatorio.';
+                    esFormularioValido = false;
+                } else if (!regexEmail.test(email.value)) {
+                    errorEmail.textContent = 'El formato del email no es válido.';
+                    esFormularioValido = false;
+                }
+
+                if (telefono.value.trim() === '') {
+                    errorTelefono.textContent = 'El teléfono es obligatorio.';
+                    esFormularioValido = false;
+                } else if (!regexNumero.test(telefono.value)) {
+                    errorTelefono.textContent = 'El formato del teléfono no es válido.';
+                    esFormularioValido = false;
+                }
+
+                if (mensaje.value.length > 300) {
+                    errorMensaje.textContent = 'El mensaje no puede superar los 300 caracteres.';
+                    esFormularioValido = false;
+                }
+
+                return esFormularioValido;
+
+            }
+
+            function mostrarDatosEnviados() {
+                const contenedor = document.getElementById('datosEnviadosContenedor');
+            
+                contenedor.innerHTML = '';
+
+                const titulo = document.createElement('h3');
+                titulo.textContent = '¡Gracias! Hemos recibido tus datos:';
+                contenedor.appendChild(titulo);
+
+
+                const nombreVal = document.getElementById('nombre').value;
+                const emailVal = document.getElementById('email').value;
+                const telefonoVal = document.getElementById('telefono').value;
+                const mensajeVal = document.getElementById('mensaje').value;
+
+                const pNombre = document.createElement('p');
+                pNombre.innerHTML = `<strong>Nombre:</strong> ${nombreVal}`;
+                contenedor.appendChild(pNombre);
+
+
+                const pEmail = document.createElement('p');
+                pEmail.innerHTML = `<strong>Email:</strong> ${emailVal}`;
+                contenedor.appendChild(pEmail);
+                
+
+                const pTelefono = document.createElement('p');
+                pTelefono.innerHTML = `<strong>Teléfono:</strong> ${telefonoVal}`;
+                contenedor.appendChild(pTelefono);
+
+                if (mensajeVal.trim() !== '') {
+                    const pMensaje = document.createElement('p');
+                    pMensaje.innerHTML = `<strong>Mensaje:</strong> ${mensajeVal}`;
+                    contenedor.appendChild(pMensaje);
+                }
+            }
+
+
+        </script>
 
     </Body>
 </html>
