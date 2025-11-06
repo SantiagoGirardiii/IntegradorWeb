@@ -4,16 +4,78 @@
         <meta charset = "UTF-8">
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
         <title> Punto Sabor - Contacto </title>
+        <link rel="stylesheet" href="estilos.css">
     </HEAD>
     <Body>
-        <header>
-        <div class = "logo">Punto Sabor</div>
-        <nav>
-            <a href = "index.html">Inicio</a>
-            <a href = "PagMenu.html">Menu</a>
-            <a href = "PagContacto.html">Contacto</a>
-        </nav>
-    </header>
+
+        <div class="divPrincipal">
+            <div class="logo">
+                <img src="logo.png" alt="logo" class="logoImagen">
+                <h1>Punto Sabor - Contacto</h1>
+            </div>
+            <nav class="navegacion">
+                <ul>
+                    <li><a href="index.html">Principal</a></li>
+                    <li><a href="PagMenu.html">Menu</a></li>
+                    <li><a href="PagContacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="contenidoContacto">
+            <h2>!Envianos tu consulta!</h2>
+            <p>Completa el formulario y te responderemos a la brevedad</p>
+
+            <div class="formularioContenedor">
+
+                <form id="formularioContacto" novalidate>
+
+                    <div class="formGrupo">
+
+                        <label for="nombre">Nombre Completo:</label>
+                        <input type="text" id="nombre" name="nombre" maxlength="50">
+                        <div class="mensajeError" id="errorNombre"></div>
+
+                    </div>
+
+                    <div class="formGrupo">
+
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email">
+                        <div class="mensajeError" id="errorEmail"></div>
+
+
+                    </div>
+
+                    <div class="formGrupo">
+                        <label for="telefono">Telefono:</label>
+                        <input type="tel" id="telefono" name="telefono" >
+                        <div class="mensajeError" ></div>
+                    </div>
+
+                    <div class="formGrupo">
+                        <label for="mensaje">Mensaje (Opcional)</label>
+                        <textarea name="mensaje" id="mensaje" rows="5" maxlength="300"></textarea>
+                        <div class="mensajeEror" id="errorMensaje"></div>
+
+                    </div>
+
+                    <div class="formGrupo">
+                        <button type="submit" class="botonComida">Enviar Consulta</button>
+                    </div>
+                </form>
+
+                <div id="datosEnviadosContenedor"></div>
+
+            </div>
+            
+        </div>
+
+        <div id="parteDeAbajo">
+            <p>Punto Sabor 2025 - Los mejores sabores</p>
+        </div>
+        
+
 
     </Body>
 </html>

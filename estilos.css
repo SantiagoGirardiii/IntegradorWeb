@@ -102,5 +102,59 @@ body {
     display: block;
 }
 
+.contenidoContacto {
+    padding: 2rem;
+    text-align: center;
+}
+
+.formularioContenedor {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.formGrupo {
+    margin-bottom: 1.5rem;
+}
+
+.formGrupo label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.formGrupo input[type="text"],
+.formGrupo input[type="email"],
+.formGrupo input[type="tel"],
+.formGrupo textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: arial,sans-serif;
+    font-size: 1rem;
+
+}
+
+.mensajeError {
+    color: rgba(228,0,43,1);
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 0.25rem;
+}
+
+#datosEnviadosContenedor {
+    margin-top: 2rem;
+    background-color: rgb(244, 244, 244);
+    border: 1px solid rgb(221, 221, 221);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
 
 
