@@ -40,10 +40,24 @@ body {
 }
 
 .navegacion a {
-    text-decoration: none;
-    color: rgba(51, 51, 51, 1);
-    font-weight: bold;
-    font-size: 1.1rem;
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(51,51,51,1);
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: transform 0.18s ease, color 0.18s ease;
+  padding: 6px 10px;
+  will-change: transform;
+}
+
+.navegacion a:hover,
+.navegacion a:focus {
+  transform: translateY(-2px);
+  outline: none;
+}
+
+nav.navegacion a:hover {
+  transform: translateY(-2px);
 }
 
 /* Carrousel */
